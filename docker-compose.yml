@@ -1,0 +1,32 @@
+version: "3"
+services:
+  db:
+    image: "postgres"
+    container_name: "postgres"
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./weather-db:/var/lib/postgresql/data
+
+  backend:
+    image: "./weather-backend"
+    container_name: "backend"
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+  frontend:
+    image: "./weather-frontend"
+    container_name: "frontend"
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend

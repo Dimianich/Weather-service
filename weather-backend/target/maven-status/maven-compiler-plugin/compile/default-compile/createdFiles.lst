@@ -1,0 +1,6 @@
+com\example\weatherbackend\models\Weather.class
+com\example\weatherbackend\WeatherBackendApplication.class
+com\example\weatherbackend\services\ListWeatherServiceImpl.class
+com\example\weatherbackend\repositories\WeatherRepository.class
+com\example\weatherbackend\controllers\ApiController.class
+com\example\weatherbackend\services\ListWeatherService.class

@@ -14,7 +14,7 @@ services:
       - ./weather-db:/var/lib/postgresql/data
 
   backend:
-    image: "./weather-backend"
+    build: "./weather-backend"
     container_name: "backend"
     restart: always
     ports:
@@ -23,7 +23,7 @@ services:
       - db
 
   frontend:
-    image: "./weather-frontend"
+    build: "./weather-frontend"
     container_name: "frontend"
     restart: always
     ports:
